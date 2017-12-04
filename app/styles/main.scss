@@ -100,3 +100,36 @@ body {
     width: 100%;
   }
 }
+
+
+@media (min-width: 991px) {
+  .navbar-brand {
+    float: left;
+    display: inline-block;
+    text-align: left;
+  }
+  .navbar-toggleable-md {
+    .navbar-collapse {
+      margin-left: 70px;
+      form {
+        display: inline-block;
+      }
+      .nav-item {
+        padding-right: 35px;
+      }
+    }
+  }
+  .jumbotron {
+    height: 52vh;
+    .container {
+      h1 {
+        font-size: 50px;
+      }
+    }
+  }
+
+  .display-products {
+    width: 90%;
+    max-width: 1300px;
+  }
+}
