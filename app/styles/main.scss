@@ -133,3 +133,18 @@ body {
     max-width: 1300px;
   }
 }
+
+@media (min-width: 991px) and (max-width: 1088px) {
+  form {
+    input {
+      max-width: 130px;
+    }
+    .btn {
+      max-width: 70px; 
+      font-size: 17px;
+      padding: 7px;
+    }
+  }
+}
+
+
