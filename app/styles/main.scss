@@ -2,3 +2,40 @@
 @import "bower_components/bootstrap/scss/bootstrap.scss";
 // endbower
 
+body {
+  background-color: #faf7f2;
+}
+
+// Navigation Styles
+
+.navbar {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  .navbar-brand {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+    img {
+      width: 110px;
+    }
+  }
+  .navbar-toggler {
+    margin-top: 20px;
+    border: none;
+    outline: none;
+  }
+  .collapse {
+    margin-left: 6px;
+    form {
+      display: block;
+    }
+    .navbar-nav {
+      .nav-item {
+        a.nav-link {
+          color: #819142;
+        }
+      }
+    }
+  }
+}
