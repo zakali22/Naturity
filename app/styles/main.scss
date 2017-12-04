@@ -52,3 +52,23 @@ body {
     font-size: 30px;
   } 
 }
+
+.display-products {
+  .card {
+    border: none;
+    height: 490px;
+    .card-block {
+      display: flex;
+      flex-direction: column;
+      h4, p {
+        font-weight: normal;
+      }
+      p {
+        font-size: 20px;
+      }
+      a {
+        margin-top: auto;
+      }
+    }
+  }
+}
