@@ -8,6 +8,21 @@ body {
 
 // Navigation Styles
 
+ul.nav {
+  background-color: #2e3032;
+  font-size: 17px;
+  width: 100%;
+  li {
+    padding-right: 15px;
+    a {
+      color: white;
+      i {
+        padding-right: 9px;
+      }
+    }
+  }
+}
+
 .navbar {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
