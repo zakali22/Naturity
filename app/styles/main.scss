@@ -39,3 +39,16 @@ body {
     }
   }
 }
+
+.jumbotron {
+  background-image: url('https://wallpapercave.com/wp/uC3HeWt.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  color: white;
+  display: flex;
+  h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+  } 
+}
