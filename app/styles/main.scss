@@ -2,8 +2,16 @@
 @import "bower_components/bootstrap/scss/bootstrap.scss";
 // endbower
 
+@import url('https://fonts.googleapis.com/css?family=Khula|Lato|Quicksand|Nunito|Josefin+Sans');
+
 body {
   background-color: #faf7f2;
+}
+
+a {
+  &:link, &:active, &:visited {
+    text-decoration: none;
+  }
 }
 
 // Navigation Styles
@@ -27,8 +35,9 @@ ul.nav {
 }
 
 .navbar {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   text-transform: uppercase;
+  font-weight: normal;
   .navbar-brand {
     float:none;
     margin:0 auto;
@@ -47,11 +56,22 @@ ul.nav {
     margin-left: 6px;
     form {
       display: block;
+      margin-top: 10px;
     }
     .navbar-nav {
       .nav-item {
         a.nav-link {
           color: #819142;
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+    .user {
+      a {
+        i {
+          margin-right: 8px;
         }
       }
     }
@@ -72,6 +92,14 @@ ul.nav {
 }
 
 .display-products {
+  font-family: 'Lato', sans-serif;
+  h2 {
+   text-transform: uppercase;
+   font-size: 20px;
+   font-weight: 300;
+   font-family: 'Open Sans', sans-serif;
+   letter-spacing: 7px;
+  }
   .card {
     border: none;
     height: 490px;
@@ -90,6 +118,30 @@ ul.nav {
     }
   }
 }
+
+.container-fluid.advert {
+  display: flex !important;
+  width: 100%;
+  margin-top: 60px;
+  background-image: url('https://lh3.googleusercontent.com/uZQhU3snh1w5lqbiFq5-EmaPks4z1X7jiKerVrMyApivXeCsdjEiaCzbDvf90nMJR1wLieRWXwivHcQLnMdFNwRBRpSrBHQXsKQOprfX6N4jNovDWDvaduL35kLAoqEbAdtltY5U9EbkIBvRqVIoef8FmGrhgcv71IqN_EgsWNKD_jgPa4yZBO_MEQHAC4foV3o0bl2SWW1QP32DdRFe6yQR6MOhI_gqcDpAQC7UvlLNhc0-m44lEqlZCgzM3U8z-77UQmsZnHecOStksPPIpqgL2_R4atGKAiWZUP431FBopAzoWMiLz-TdzZZbAW-FGJh-gCKhvHquV9lJTRyb-FTrOuzqp_u-lc7n9Q3MT_zSI3Swvx2Jd6F8LNu3ws5qRcXk9UO28tUMOoWwkfEKoInnadzB0ljDZr60EgQmlHmPjQ1K3B1eJsO6IfrXrXbUBbpzwf5Yx_tsGuXsQBW9iExKI71dSLpGOj72iPnN1ze7AiQpoHwxIngQS89Hs8L8ogvibdJXHxjuz-1SYPPqS-OKCn6TTjEQ4T-IsGrXFQEnKmSu6U950gvqpjPTqiQ3BrA9hEq7Dp48jMtrrAF3yvzepCWg5GPbZbIyxa0luA=w1519-h949-no');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  color: white;
+  h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+  }
+  p {
+    font-family: 'Nunito', sans-serif;
+    font-weight: lighter;
+    i {
+      font-weight: bolder;
+    }
+  }
+}
+
+
 
 @media (max-width: 575px) {
   .jumbotron {
@@ -115,19 +167,26 @@ ul.nav {
       li {
         &:nth-child(2), &:last-child {
           display: none;
-          text-transform: uppercase;
         }
       }
   }
 }
 
 @media (max-width: 306px) {
+  .display-products {
+    h2 {
+      font-size: 16px;
+    }
+  }
   ul.nav {
     font-size: 13px;
   }
 }
 
 @media (min-width: 643px){
+    .user {
+      display: none;
+    }
     ul.nav {
       li {
         &:nth-child(2), &:last-child {
@@ -166,7 +225,8 @@ ul.nav {
     }
   }
   .jumbotron {
-    height: 52vh;
+    height: 72vh;
+    background-attachment: fixed;
     .container {
       h1 {
         font-size: 50px;
@@ -177,6 +237,14 @@ ul.nav {
   .display-products {
     width: 90%;
     max-width: 1300px;
+    h2 {
+      font-size: 30px;
+    }
+  }
+  .container-fluid.advert {
+    h2 {
+      font-size: 50px;
+    }
   }
 }
 

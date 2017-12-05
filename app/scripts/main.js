@@ -1,1 +1,10 @@
-console.log('\'Allo \'Allo!');
+$(document).ready(function(){
+// external js: masonry.pkgd.js
+
+	$('.grid').masonry({
+	  itemSelector: '.grid-item',
+	  columnWidth: '.grid-sizer',
+	  percentPosition: true
+	});
+
+});
