@@ -1,10 +1,9 @@
 $(document).ready(function(){
 // external js: masonry.pkgd.js
-
-	$('.grid').masonry({
-	  itemSelector: '.grid-item',
-	  columnWidth: '.grid-sizer',
-	  percentPosition: true
+	$('.dropdown').on('mouseover', function(){
+		$(this).children('.dropdown-menu').slideDown('fast');
 	});
-
+	$('.dropdown').on('mouseleave', function(){
+		$(this).children('.dropdown-menu').slideUp('fast');
+	});
 });

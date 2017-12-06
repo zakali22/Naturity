@@ -2,7 +2,7 @@
 @import "bower_components/bootstrap/scss/bootstrap.scss";
 // endbower
 
-@import url('https://fonts.googleapis.com/css?family=Khula|Lato|Quicksand|Nunito|Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Khula|Lato|Quicksand|Nunito|Josefin+Sans|Hind:300');
 
 * {
   box-sizing: border-box;
@@ -10,13 +10,22 @@
 
 body {
   background-color: #faf7f2;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-a {
+
+%links {
   &:link, &:active, &:visited {
     text-decoration: none;
   }
 }
+
+a {
+  @extend %links;
+}
+
 
 // Navigation Styles
 
@@ -68,6 +77,13 @@ ul.nav {
           color: #819142;
           &:hover {
             color: black;
+          }
+        }
+        .dropdown-menu {
+          border-radius: 5px;
+          display: none;
+          a {
+            font-size: 15px;
           }
         }
       }
@@ -147,7 +163,7 @@ ul.nav {
 
 .container-fluid.promo {
   margin-top: 100px;
-  height: 400px;
+  height: 100%;
   width: 100%;
   .external {
     background-color: white;
@@ -194,6 +210,53 @@ ul.nav {
     .card {
        display: flex;
        border: none;
+    }
+  }
+}
+
+.footer {
+  margin-top: 100px;
+  min-height: 400px;
+  background-color: #221d1c;
+  width: 100%;
+  .container-fluid {
+    width: 90%;
+    position: relative;
+    top: 50px;
+    text-align: left;
+    h3 {
+      color: #a09485;
+      font-family: 'Hind', sans-serif;
+      font-size: 20px;
+    }
+    ul {
+      color: #cdc5bb;
+      text-align: left;
+      padding: 0;
+      li {
+        display: block;
+        a {
+          @extend %links;
+          &:link, &:active, &:visited {
+            color: #cdc5bb;
+          }
+        }
+      }
+    }
+
+    .row {
+      &:nth-child(2){
+        margin-top: 50px;
+      }
+    }
+    .social {
+      ul {
+        li {
+          display: inline;
+          padding-right: 30px;
+          font-size: 20px;
+        }
+      }
     }
   }
 }
@@ -273,6 +336,12 @@ ul.nav {
         }
       }
     }
+  }
+}
+
+@media (max-width: 767px){
+  .social {
+    margin-top: 20px;
   }
 }
 
