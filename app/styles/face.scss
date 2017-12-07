@@ -1,0 +1,163 @@
+
+@import url('https://fonts.googleapis.com/css?family=Khula|Lato|Quicksand|Nunito|Josefin+Sans|Hind:300');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #faf7f2;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+%links {
+  &:link, &:active, &:visited {
+    text-decoration: none;
+  }
+}
+
+a {
+  @extend %links;
+}
+
+
+// Navigation Styles
+
+ul.nav {
+  background-color: #2e3032;
+  font-size: 17px;
+  width: 100%;
+  li {
+    padding-right: 15px;
+    &:nth-child(2), &:last-child {
+      display:none;
+    }
+    a {
+      color: white;
+      i {
+        padding-right: 9px;
+      }
+    }
+  }
+}
+
+.navbar {
+  font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  .navbar-brand {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+    img {
+      width: 110px;
+    }
+  }
+  .navbar-toggler {
+    margin-top: 20px;
+    border: none;
+    outline: none;
+  }
+  .collapse {
+    margin-left: 6px;
+    form {
+      display: block;
+      margin-top: 10px;
+    }
+    .navbar-nav {
+      .nav-item {
+        a.nav-link {
+          color: #819142;
+          &:hover {
+            color: black;
+          }
+        }
+        .dropdown-menu {
+          border-radius: 5px;
+          display: none;
+          a {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .user {
+      a {
+        i {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+
+
+// Media Queries
+
+@media (max-width: 642px){
+  ul.nav {
+      li {
+        &:nth-child(2), &:last-child {
+          display: none;
+        }
+      }
+  }
+}
+@media (max-width: 306px) {
+  .display-products {
+    h2 {
+      font-size: 16px;
+    }
+  }
+  ul.nav {
+    font-size: 13px;
+  }
+}
+@media (min-width: 643px){
+    .user {
+      display: none;
+    }
+    ul.nav {
+      li {
+        &:nth-child(2), &:last-child {
+          display: inline;
+          text-transform: uppercase;
+        }
+      }
+  }
+}
+@media (min-width: 991px) {
+  .navbar-brand {
+    float: left;
+    display: inline-block;
+    text-align: left;
+  }
+  .navbar-toggleable-md {
+    .navbar-collapse {
+      margin-left: 70px;
+      form {
+        display: inline-block;
+      }
+      .nav-item {
+        padding-right: 35px;
+      }
+    }
+  }
+}
+
+@media (min-width: 991px) and (max-width: 1088px) {
+  form {
+    input {
+      max-width: 130px;
+    }
+    .btn {
+      max-width: 70px; 
+      font-size: 17px;
+      padding: 7px;
+    }
+  }
+}
