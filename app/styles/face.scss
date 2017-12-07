@@ -96,7 +96,45 @@ ul.nav {
 }
 
 
+.jumbotron {
+  background-image: url('https://lh3.googleusercontent.com/duG4dcKkbalQZcpRDtirCGftoufDgdNiuZrzOvZtPyfpz0KDnH_-N66Jcg9jVGczFeRBxiKOS40Ht10kAtJ1lyKOOD8uxHbfjJtMeUXagAcoJazJn1_gK6OKZiC9TtiJqRgRtHWXKIx8m2TFqhkg3kxHKPXucOqIYoQuQI5KDypCZewPKvvoW83IRdRLOnzCmMfHR3DjyJOmrG3LtNx7n8IjuRLpUzMLElaZOqYTuZoSq0hbKEZKovSFuN2Wom0-YcmTeU9NMZviAjNRVGw3PyLqPA0m0aWOREh2kXt_YAWw7b-6emXenvuAvXXZTnCVu5piyxqtXI52RHkX77xAQUM99d9fBdSJ86vjo7JuNgqy6e4BHfjd8M7H3gYDNd-WuCD67socuMsrpJpagINVaOuypPNqzDI_WljCuaL-YyaSLG8w3btjZZoggSJFWgIe4tlmh7kK3zumds3_LT4kXBmF9nM9ZJ6QjKFf2H14zlJmem6_z1edrxFF4vaguG3i-ryvK3RIWPS1pR8HE1dtHDbcBTZwoB_qluxtr2ZRWaoK_NrvZtdbV4PJTtwOH8_SadxFIvjqEss7iiejXZTExOP4z4ZhwYwK2cFw7nO61A=w1920-h530-no');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  color: white;
+  display: flex;
+  h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+  } 
+  hr {
+    background-color: white;
+    max-width: 10%;
+  }
+}
+
+
+
 // Media Queries
+
+@media (max-width: 575px) {
+  .jumbotron {
+    h1 {
+      font-size: 22px;
+    } 
+    p, button {
+      font-size: 15px;
+    }
+  }
+  .display-products {
+    width: 90%;
+    .card-deck {
+      .col-sm-6 {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
 
 @media (max-width: 642px){
   ul.nav {
@@ -107,6 +145,7 @@ ul.nav {
       }
   }
 }
+
 @media (max-width: 306px) {
   .display-products {
     h2 {
@@ -117,6 +156,7 @@ ul.nav {
     font-size: 13px;
   }
 }
+
 @media (min-width: 643px){
     .user {
       display: none;
@@ -130,6 +170,53 @@ ul.nav {
       }
   }
 }
+
+@media (min-width: 576px) {
+  .jumbotron {
+    height: 280px;
+    hr {
+      max-width: 13%;
+    }
+  }
+  .display-products {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-fluid.promo {
+      .external {
+      &:nth-child(2) {
+        h2 {
+          font-size: 70px;
+          width: 70%;
+          padding-top: 100px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px){
+  .social {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 1671px){
+    .container-fluid.promo {
+      .external {
+        &:nth-child(2) {
+          h2 {
+            font-size: 80px;
+            width: 60%;
+          }
+        }
+    }
+  }
+}
+
+
 @media (min-width: 991px) {
   .navbar-brand {
     float: left;
@@ -147,6 +234,35 @@ ul.nav {
       }
     }
   }
+  .jumbotron {
+    height: 52vh;
+    background-attachment: fixed;
+    .container {
+      h1 {
+        font-size: 50px;
+      }
+    }
+  }
+
+  %content-size {
+    width: 90%;
+    max-width: 1300px;
+  }
+
+  .display-products {
+    @extend %content-size;
+    h2 {
+      font-size: 30px;
+    }
+  }
+  .container-fluid.advert {
+    h2 {
+      font-size: 50px;
+    }
+  }
+  .container-fluid.promo {
+    @extend %content-size;
+  }
 }
 
 @media (min-width: 991px) and (max-width: 1088px) {
@@ -161,3 +277,5 @@ ul.nav {
     }
   }
 }
+
+
