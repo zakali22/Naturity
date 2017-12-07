@@ -17,14 +17,11 @@ body {
 
 
 %links {
-  &:link, &:active, &:visited {
+  &:link, &:active, &:visited, &:hover {
     text-decoration: none;
   }
 }
 
-a {
-  @extend %links;
-}
 
 
 // Navigation Styles
@@ -40,6 +37,9 @@ ul.nav {
     }
     a {
       color: white;
+      &:link, &:active, &:visited {
+        color: white;
+      } 
       i {
         padding-right: 9px;
       }
@@ -134,6 +134,10 @@ ul.nav {
       }
       a {
         margin-top: auto;
+        @extend %links;
+        &:link, &:active, &:visited, &:hover {
+          color: #221d1c;
+        } 
       }
     }
   }
