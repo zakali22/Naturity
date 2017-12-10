@@ -1,0 +1,40 @@
+#accordion {
+	.card {
+		background: transparent;
+		border: none;
+		a {
+			&:link, &:hover, &:visited, &:active {
+				color: black;
+				text-decoration: none;
+				font-weight: 200;
+			}
+			color: coral;
+		}
+	}
+}
+
+.product {
+	.col-md {
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+		&:nth-child(2){
+			margin-top: 40px;
+			text-align: center;
+			.card-body {
+				text-align: left;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.product {
+		.col-md {
+			&:nth-child(2){
+				text-align: left;
+			}
+		}
+	}
+}
