@@ -1,9 +1,0 @@
-{
-  "name": "naturity",
-  "private": true,
-  "dependencies": {
-    "bootstrap": "4.0.0-alpha.6",
-    "modernizr": "~2.8.1",
-    "masonry": "^4.2.0"
-  }
-}
