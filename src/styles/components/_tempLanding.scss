@@ -1,0 +1,73 @@
+
+.temp-main {
+    display: flex;
+    height: 100vh;
+    font-family: 'Karla', sans-serif;
+
+    & > * {
+        flex-basis: 50%;
+    }
+}
+
+.temp-left-panel {
+    padding: 10px 40px
+}
+
+.temp-right-panel {
+    background-image: url('../../assets/image/aloe-vera.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.temp-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    svg {
+        width: 180px;
+        height: 93px;
+    }
+
+    &__nav {
+        &-item {
+            font-family: 'Teko', sans-serif;
+            font-size: 2rem;
+            transition: all .3s ease;
+            
+            &:hover, &:focus {
+                a {
+                    border-bottom: 2px solid $green;
+                    margin-top: -2px
+                }
+            }
+        }
+    }
+}
+
+.temp-body {
+    &__heading {
+        margin-top: 5rem;
+        text-transform: capitalize;
+        font-stretch: normal;
+        font-family: 'Karla', sans-serif;
+        color: $black;
+        letter-spacing: -0.5px;
+        font-size: 4rem;
+        font-weight: 300;
+    }
+
+    &__description {
+        margin-top: 5rem;
+    }
+
+    &__subheading {
+        font-family: 'Karla', sans-serif;
+        color: $black;
+        letter-spacing: -0.5px;
+        font-weight: 300;
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
