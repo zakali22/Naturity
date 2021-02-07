@@ -22,18 +22,31 @@ class TempLanding extends React.Component {
 
     componentDidMount(){
         const textEl = document.querySelectorAll('.temp-body__description, .temp-body__subheading, p, .temp-body__form, .btn')
+        const leaf3 = document.querySelector('#leaf3')
+        const leaf2 = document.querySelector('#leaf2')
+        const leaf1 = document.querySelector('#leaf1')
+        const dot = document.querySelector('#dot')
+        const headlineText = document.querySelector('#headline')
 
         this.slideTween = new gsap.timeline();
         this.slideTween
             .from(this.overlay, 2, {width: "100%"})
             .set(this.overlay, {autoAlpha: 0})
+
             .from(this.logo, 1.3, {scale: "0.7", autoAlpha: 0}, "-=.3")
-            .from(this.heading, .5, {autoAlpha: 0, y: 30}, "-=.2")
-            .staggerFrom(textEl, .5, {autoAlpha: 0, y: 30}, 0.08)
+            .from(dot, 1, {autoAlpha: 0})
+            .from(leaf3, .7, {autoAlpha: 0, x: "+=10", y: "+=10", rotation: -50, transformOrigin: "center"})
+            .from(leaf2, .7, {autoAlpha: 0, x: "-=12", y: "+=22", rotation: -55, transformOrigin: "center"})
+            .from(leaf1, .7, {autoAlpha: 0, x: "-=20", y: "+=5", rotation: -55, transformOrigin: "center"})
+            .from(headlineText, .7, {autoAlpha: 0, y: "+=20"})
+            
+            .from(this.heading, .5, {autoAlpha: 0, y: 30}, "-=2.2")
+            .staggerFrom(textEl, .5, {autoAlpha: 0, y: 30}, 0.08, "-=.5")
             .to(CSSRulePlugin.getRule(".temp-body__heading:after"), 1.8, {
                 cssRule: {width: "100%"},
                 delay: .4
             })
+            // .staggerFromTo(leaves, .5, {autoAlpha: 0.5, x: "-30px", rotate: -10}, {autoAlpha: 1, x: 0, rotate: 0}, 0.05)
     }
 
     render(){
