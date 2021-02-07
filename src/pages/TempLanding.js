@@ -27,7 +27,7 @@ class TempLanding extends React.Component {
         this.slideTween
             .from(this.overlay, 2, {width: "100%"})
             .set(this.overlay, {autoAlpha: 0})
-            .from(this.logo, 1, {x: "-100%", autoAlpha: 0}, "-=.3")
+            .from(this.logo, 1.3, {scale: "0.7", autoAlpha: 0}, "-=.3")
             .from(this.heading, .5, {autoAlpha: 0, y: 30}, "-=.2")
             .staggerFrom(textEl, .5, {autoAlpha: 0, y: 30}, 0.08)
             .to(CSSRulePlugin.getRule(".temp-body__heading:after"), 1.8, {
