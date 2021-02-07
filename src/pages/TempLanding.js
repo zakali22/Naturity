@@ -39,7 +39,7 @@ class TempLanding extends React.Component {
         if(window.innerWidth >= 992){
             this.slideTween
                 .from(this.overlay, 2, {width: "100%"})
-                .set(this.overlay, {autoAlpha: 0})
+                .set(this.overlay, {autoAlpha: 0, width: "0%"})
 
                 .from(this.logo, 1.3, {scale: "0.6", autoAlpha: 0}, "-=1.6")
                 .from(dot, 1, {autoAlpha: 0}, "-=.2")
@@ -52,7 +52,10 @@ class TempLanding extends React.Component {
                 .staggerFrom(textEl, .5, {autoAlpha: 0, y: 30}, 0.08, "-=3")
                 .to(CSSRulePlugin.getRule(".temp-body__heading:after"), 1.8, {
                     cssRule: {width: "100%"},
-                    delay: .4
+                    delay: .4,
+                    onComplete: function(div){
+                        gsap.timeline().set(this.heading, {className:"addBorderBottom"})
+                    }
                 })
                 // .staggerFromTo(leaves, .5, {autoAlpha: 0.5, x: "-30px", rotate: -10}, {autoAlpha: 1, x: 0, rotate: 0}, 0.05)
         } else {

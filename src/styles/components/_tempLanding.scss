@@ -17,7 +17,8 @@
 
 .temp-overlay {
     position: absolute;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     width: 50%;
     background: white;
     z-index: 100;
@@ -119,6 +120,7 @@
             z-index: -1;
             display: block;
         }
+        
     }
 
     &__description {
@@ -181,5 +183,20 @@
 
 
         }
+    }
+}
+
+
+.addBorderBottom {
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -13px;
+        left: 0;
+        width: 0%;
+        height: 15px;
+        background: #badb26;
+        z-index: -1;
+        display: block;
     }
 }
