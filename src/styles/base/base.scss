@@ -65,4 +65,67 @@ ul {
 
 .fill-green {
   color: rgb(186, 219, 38);
+
+  &--question-mark {
+    position: relative;
+    color: $black;
+
+    &::before {
+      content: ".";
+      position: absolute;
+      color: #badb26;
+      height: 2px;
+      bottom: auto;
+      /* width: 3px; */
+      margin-left: 6px;
+    }    
+  }
+}
+
+.btn {
+    
+    font-family: Bau-Super,sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 11px;
+    padding: 13px 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &--white {
+      border: 1px solid #000;
+      color: $black;
+
+      &:hover {
+        color: white;
+        background: $green;
+        border-color: $green;
+      }
+    }
+}
+
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 500px;
+
+  &__input {
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid $black;
+    flex: 2 0 auto;
+    margin-right: 2rem;
+    font-size: 1.8rem;
+    letter-spacing: 1.8px;
+    line-height: 24px;
+    font-family: Bau-Super, sans-serif;
+    padding-bottom: 4px;
+    outline: none;
+    
+    ::placeholder {
+      color: #000;
+    }
+  }
 }
