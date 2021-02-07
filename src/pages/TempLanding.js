@@ -39,7 +39,7 @@ class TempLanding extends React.Component {
             .from(this.overlay, 2, {width: "100%"})
             .set(this.overlay, {autoAlpha: 0})
 
-            .from(this.logo, 1.3, {scale: "0.7", autoAlpha: 0}, "-=1")
+            .from(this.logo, 1.3, {scale: "0.6", autoAlpha: 0}, "-=1.6")
             .from(dot, 1, {autoAlpha: 0}, "-=.2")
             .from(leaf3, .7, {autoAlpha: 0, x: "+=10", y: "+=10", rotation: -50, transformOrigin: "center"})
             .from(leaf2, .7, {autoAlpha: 0, x: "-=12", y: "+=22", rotation: -55, transformOrigin: "center"})
