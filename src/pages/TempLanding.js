@@ -1,6 +1,7 @@
 import React from "react";
 import {ReactComponent as LogoImage} from "../assets/Logo1.svg"
 import Social from "../components/Social"
+import Form from "../components/Form"
 import ReactDOM from "react-dom";
 import { gsap } from "gsap";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
@@ -50,10 +51,8 @@ class TempLanding extends React.Component {
                         <p>We have been producing Natural Aromatherapy and Skincare Products since 2014. We have a passion for Producing Natural Skincare and Aromatherapy products which aren't only super natural in their origins, but effective in giving you wonderful skin and a rejuvenated mind. Using botanical extracts, we take the natural properties of plants to renew, regenerate and revive and include them in our skincare products to produce highly effective, indulgent skincare products that give visible results to your skin, whilst maintaining our ethics of provenance and naturalness.</p>
 
                         <h2 className="temp-body__subheading">Get notified<span className="fill-green">.</span></h2>
-                        <form className="form temp-body__form">
-                            <input className="form__input" name="email" type="text" value="" placeholder="email" />
-                            <button className="btn btn--white">Sign up</button>
-                        </form>
+
+                        <Form />
 
                         <Social />
                         
