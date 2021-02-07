@@ -35,26 +35,46 @@ class TempLanding extends React.Component {
         const headlineText = document.querySelector('#headline')
 
         this.slideTween = new gsap.timeline();
-        this.slideTween
-            .from(this.overlay, 2, {width: "100%"})
-            .set(this.overlay, {autoAlpha: 0})
 
-            .from(this.logo, 1.3, {scale: "0.6", autoAlpha: 0}, "-=1.6")
-            .from(dot, 1, {autoAlpha: 0}, "-=.2")
-            .from(leaf3, .7, {autoAlpha: 0, x: "+=10", y: "+=10", rotation: -50, transformOrigin: "center"})
-            .from(leaf2, .7, {autoAlpha: 0, x: "-=12", y: "+=22", rotation: -55, transformOrigin: "center"})
-            .from(leaf1, .7, {autoAlpha: 0, x: "-=20", y: "+=5", rotation: -55, transformOrigin: "center"})
-            .from(headlineText, .7, {autoAlpha: 0, y: "+=20"})
-            
-            .from(this.heading, .5, {autoAlpha: 0, y: 30}, "-=3.2")
-            .staggerFrom(textEl, .5, {autoAlpha: 0, y: 30}, 0.08, "-=3")
-            .to(CSSRulePlugin.getRule(".temp-body__heading:after"), 1.8, {
-                cssRule: {width: "100%"},
-                delay: .4
-            })
-            // .staggerFromTo(leaves, .5, {autoAlpha: 0.5, x: "-30px", rotate: -10}, {autoAlpha: 1, x: 0, rotate: 0}, 0.05)
+        if(window.innerWidth >= 992){
+            this.slideTween
+                .from(this.overlay, 2, {width: "100%"})
+                .set(this.overlay, {autoAlpha: 0, width: "0%"})
 
-            this.slideTween.eventCallback("onComplete", this.imageSlideShow)
+                .from(this.logo, 1.3, {scale: "0.6", autoAlpha: 0}, "-=1.6")
+                .from(dot, 1, {autoAlpha: 0}, "-=.2")
+                .from(leaf3, .7, {autoAlpha: 0, x: "+=10", y: "+=10", rotation: -50, transformOrigin: "center"})
+                .from(leaf2, .7, {autoAlpha: 0, x: "-=12", y: "+=22", rotation: -55, transformOrigin: "center"})
+                .from(leaf1, .7, {autoAlpha: 0, x: "-=20", y: "+=5", rotation: -55, transformOrigin: "center"})
+                .from(headlineText, .7, {autoAlpha: 0, y: "+=20"})
+                
+                .from(this.heading, .5, {autoAlpha: 0, y: 30}, "-=3.2")
+                .staggerFrom(textEl, .5, {autoAlpha: 0, y: 30}, 0.08, "-=3")
+                .to(CSSRulePlugin.getRule(".temp-body__heading:after"), 1.8, {
+                    cssRule: {width: "100%"},
+                    delay: .4,
+                    onComplete: function(div){
+                        gsap.timeline().set(this.heading, {className:"addBorderBottom"})
+                    }
+                })
+                // .staggerFromTo(leaves, .5, {autoAlpha: 0.5, x: "-30px", rotate: -10}, {autoAlpha: 1, x: 0, rotate: 0}, 0.05)
+        } else {
+            this.slideTween
+                .set(this.overlay, {autoAlpha: 0})
+                .from(this.logo, 1.3, {scale: "0.6", autoAlpha: 0}, "-=1.6")
+                .from(dot, 1, {autoAlpha: 0}, "-=.2")
+                .from(leaf3, .7, {autoAlpha: 0, x: "+=10", y: "+=10", rotation: -50, transformOrigin: "center"})
+                .from(leaf2, .7, {autoAlpha: 0, x: "-=12", y: "+=22", rotation: -55, transformOrigin: "center"})
+                .from(leaf1, .7, {autoAlpha: 0, x: "-=20", y: "+=5", rotation: -55, transformOrigin: "center"})
+                .from(headlineText, .7, {autoAlpha: 0, y: "+=20"})
+                
+                .from(this.heading, .5, {autoAlpha: 0, y: 30}, "-=3.2")
+                .staggerFrom(textEl, .5, {autoAlpha: 0, y: 30}, 0.08, "-=3")
+                .to(CSSRulePlugin.getRule(".temp-body__heading:after"), 1.8, {
+                    cssRule: {width: "100%"},
+                    delay: .4
+                })
+        }
 
     }
 
