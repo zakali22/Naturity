@@ -4,10 +4,19 @@
     min-height: 100vh;
     height: 100%;
     font-family: 'Karla', sans-serif;
+    position: relative;
 
     & > * {
         flex-basis: 50%;
     }
+}
+
+.temp-overlay {
+    position: absolute;
+    height: 100vh;
+    width: 50%;
+    background: white;
+    z-index: 100;
 }
 
 .temp-left-panel {

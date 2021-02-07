@@ -16,6 +16,7 @@ class TempLanding extends React.Component {
         this.slideTween = null
         this.heading = null
         this.logo = null
+        this.overlay = null
     }
 
     componentDidMount(){
@@ -23,8 +24,10 @@ class TempLanding extends React.Component {
 
         this.slideTween = new gsap.timeline();
         this.slideTween
-            .from(this.logo, 1, {autoAlpha: 0, delay: .6})
-            .from(this.heading, .5, {autoAlpha: 0, y: 30, delay: 0.3})
+            .from(this.overlay, 2, {width: "100%"})
+            .set(this.overlay, {autoAlpha: 0})
+            .from(this.logo, 1, {x: "-100%", autoAlpha: 0}, "-=.3")
+            .from(this.heading, .5, {autoAlpha: 0, y: 30}, "-=.2")
             .staggerFrom(textEl, .5, {autoAlpha: 0, y: 30}, 0.08)
             .to(CSSRulePlugin.getRule(".temp-body__heading:after"), 1.8, {
                 cssRule: {width: "100%"},
@@ -35,6 +38,7 @@ class TempLanding extends React.Component {
     render(){
         return (
             <div className="temp-main">
+                <div className="temp-overlay" ref={element => this.overlay = element}></div>
                 <div className="temp-left-panel">
                     <header className="temp-header">
                         <a href="#" ref={element => this.logo = element}><LogoImage /></a>
