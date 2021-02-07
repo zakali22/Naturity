@@ -57,8 +57,22 @@
         letter-spacing: -0.5px;
         font-size: 5rem;
         font-weight: 300;
-        border-bottom: 15px solid $green;
+        // border-bottom: 15px solid $green;
         width: fit-content;
+        position: relative;
+        z-index: 2;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -13px;
+            left: 0;
+            width: 0%;
+            height: 15px;
+            background: #badb26;
+            z-index: -1;
+            display: block;
+        }
     }
 
     &__description {

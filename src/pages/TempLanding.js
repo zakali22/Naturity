@@ -1,34 +1,65 @@
 import React from "react";
 import {ReactComponent as LogoImage} from "../assets/Logo1.svg"
 import Social from "../components/Social"
+import ReactDOM from "react-dom";
+import { gsap } from "gsap";
+import { CSSRulePlugin } from "gsap/CSSRulePlugin";
+const Power2 = window.Power2;
 
-function TempLanding(){
-    return (
-        <div className="temp-main">
-            <div className="temp-left-panel">
-                <header className="temp-header">
-                    <a href="#"><LogoImage /></a>
-                </header>
-                <div className="temp-body">
-                    <h1 className="p temp-body__heading">Coming Soon<span className="fill-green">.</span></h1>
-                    <div className="temp-body__description">
-                    <h2 className="temp-body__subheading">Who are we<span className="fill-green fill-green--question-mark">?</span></h2>
-                    <p>We have been producing Natural Aromatherapy and Skincare Products since 2014. We have a passion for Producing Natural Skincare and Aromatherapy products which aren't only super natural in their origins, but effective in giving you wonderful skin and a rejuvenated mind. Using botanical extracts, we take the natural properties of plants to renew, regenerate and revive and include them in our skincare products to produce highly effective, indulgent skincare products that give visible results to your skin, whilst maintaining our ethics of provenance and naturalness.</p>
 
-                    <h2 className="temp-body__subheading">Get notified<span className="fill-green">.</span></h2>
-                    <form className="form temp-body__form">
-                        <input className="form__input" name="email" type="text" value="" placeholder="email" />
-                        <button className="btn btn--white">Sign up</button>
-                    </form>
+gsap.registerPlugin(CSSRulePlugin);
 
-                    <Social />
-                    
+class TempLanding extends React.Component {
+    constructor(props){
+        super(props)
+
+        this.slideTween = null
+        this.heading = null
+        this.logo = null
+    }
+
+    componentDidMount(){
+        const textEl = document.querySelectorAll('.temp-body__description, .temp-body__subheading, p, .temp-body__form, .btn')
+
+        this.slideTween = new gsap.timeline();
+        this.slideTween
+            .from(this.logo, 1, {autoAlpha: 0, delay: .6})
+            .from(this.heading, .5, {autoAlpha: 0, y: 30, delay: 0.3})
+            .staggerFrom(textEl, .5, {autoAlpha: 0, y: 30}, 0.08)
+            .to(CSSRulePlugin.getRule(".temp-body__heading:after"), 1.8, {
+                cssRule: {width: "100%"},
+                delay: .4
+            })
+    }
+
+    render(){
+        return (
+            <div className="temp-main">
+                <div className="temp-left-panel">
+                    <header className="temp-header">
+                        <a href="#" ref={element => this.logo = element}><LogoImage /></a>
+                    </header>
+                    <div className="temp-body">
+                        <h1 ref={element => this.heading = element} className="p temp-body__heading">Coming Soon<span className="fill-green">.</span></h1>
+                        <div className="temp-body__description">
+                        <h2 className="temp-body__subheading">Who are we<span className="fill-green fill-green--question-mark">?</span></h2>
+                        <p>We have been producing Natural Aromatherapy and Skincare Products since 2014. We have a passion for Producing Natural Skincare and Aromatherapy products which aren't only super natural in their origins, but effective in giving you wonderful skin and a rejuvenated mind. Using botanical extracts, we take the natural properties of plants to renew, regenerate and revive and include them in our skincare products to produce highly effective, indulgent skincare products that give visible results to your skin, whilst maintaining our ethics of provenance and naturalness.</p>
+
+                        <h2 className="temp-body__subheading">Get notified<span className="fill-green">.</span></h2>
+                        <form className="form temp-body__form">
+                            <input className="form__input" name="email" type="text" value="" placeholder="email" />
+                            <button className="btn btn--white">Sign up</button>
+                        </form>
+
+                        <Social />
+                        
+                        </div>
                     </div>
                 </div>
+                <div className="temp-right-panel"></div>
             </div>
-            <div className="temp-right-panel"></div>
-        </div>
-    )
+        )
+    }
 }
 
 export default TempLanding
