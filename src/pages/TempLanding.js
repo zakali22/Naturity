@@ -5,8 +5,13 @@ import Form from "../components/Form"
 import ReactDOM from "react-dom";
 import { gsap } from "gsap";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
-const Power2 = window.Power2;
+import image2 from "../assets/image/aloe-vera2.jpg"
+import image3 from "../assets/image/plant1.jpg"
+import image4 from "../assets/image/plant4.jpg"
+import image5 from "../assets/image/plant6.jpg"
 
+const Power2 = window.Power2;
+const images = [image2, image3, image4, image5]
 
 gsap.registerPlugin(CSSRulePlugin);
 
@@ -18,6 +23,7 @@ class TempLanding extends React.Component {
         this.heading = null
         this.logo = null
         this.overlay = null
+        this.rightPanel = React.createRef()
     }
 
     componentDidMount(){
@@ -33,21 +39,40 @@ class TempLanding extends React.Component {
             .from(this.overlay, 2, {width: "100%"})
             .set(this.overlay, {autoAlpha: 0})
 
-            .from(this.logo, 1.3, {scale: "0.7", autoAlpha: 0}, "-=.3")
-            .from(dot, 1, {autoAlpha: 0})
+            .from(this.logo, 1.3, {scale: "0.7", autoAlpha: 0}, "-=1")
+            .from(dot, 1, {autoAlpha: 0}, "-=.2")
             .from(leaf3, .7, {autoAlpha: 0, x: "+=10", y: "+=10", rotation: -50, transformOrigin: "center"})
             .from(leaf2, .7, {autoAlpha: 0, x: "-=12", y: "+=22", rotation: -55, transformOrigin: "center"})
             .from(leaf1, .7, {autoAlpha: 0, x: "-=20", y: "+=5", rotation: -55, transformOrigin: "center"})
             .from(headlineText, .7, {autoAlpha: 0, y: "+=20"})
             
-            .from(this.heading, .5, {autoAlpha: 0, y: 30}, "-=2.2")
-            .staggerFrom(textEl, .5, {autoAlpha: 0, y: 30}, 0.08, "-=.5")
+            .from(this.heading, .5, {autoAlpha: 0, y: 30}, "-=3.2")
+            .staggerFrom(textEl, .5, {autoAlpha: 0, y: 30}, 0.08, "-=3")
             .to(CSSRulePlugin.getRule(".temp-body__heading:after"), 1.8, {
                 cssRule: {width: "100%"},
                 delay: .4
             })
             // .staggerFromTo(leaves, .5, {autoAlpha: 0.5, x: "-30px", rotate: -10}, {autoAlpha: 1, x: 0, rotate: 0}, 0.05)
+
+            this.slideTween.eventCallback("onComplete", this.imageSlideShow)
+
     }
+
+    // imageSlideShow = () => {
+    //     let bgImagesCounter = 0
+
+    //     this.imageSlideShow = window.setInterval(() => {
+    //         if(this.rightPanel.current){
+    //             this.rightPanel.current.style.backgroundImage = `url(${images[bgImagesCounter]})`
+
+    //             if(bgImagesCounter < images.length - 1){
+    //                 bgImagesCounter++
+    //             } else {
+    //                 bgImagesCounter = 0
+    //             }
+    //         }
+    //     }, 5000)
+    // }
 
     render(){
         return (
@@ -72,7 +97,7 @@ class TempLanding extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="temp-right-panel"></div>
+                <div className="temp-right-panel" ref={this.rightPanel}></div>
             </div>
         )
     }

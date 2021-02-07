@@ -24,10 +24,12 @@
 }
 
 .temp-right-panel {
-    background-image: url('../../assets/image/aloe-vera.jpg');
+    background-image: url('../../assets/image/plant6.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    transition: background-image .8s ease;
 }
 
 .temp-header {
