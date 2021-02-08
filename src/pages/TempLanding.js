@@ -9,6 +9,7 @@ import image2 from "../assets/image/aloe-vera2.jpg"
 import image3 from "../assets/image/plant1.jpg"
 import image4 from "../assets/image/plant4.jpg"
 import image5 from "../assets/image/plant6.jpg"
+import { Helmet } from 'react-helmet'
 
 const Power2 = window.Power2;
 const images = [image2, image3, image4, image5]
@@ -96,29 +97,34 @@ class TempLanding extends React.Component {
 
     render(){
         return (
-            <div className="temp-main">
-                <div className="temp-overlay" ref={element => this.overlay = element}></div>
-                <div className="temp-left-panel">
-                    <header className="temp-header">
-                        <a href="#" ref={element => this.logo = element}><LogoImage /></a>
-                    </header>
-                    <div className="temp-body">
-                        <h1 ref={element => this.heading = element} className="p temp-body__heading">Coming Soon<span className="fill-green">.</span></h1>
-                        <div className="temp-body__description">
-                        <h2 className="temp-body__subheading">Who are we<span className="fill-green fill-green--question-mark">?</span></h2>
-                        <p>We have been producing Natural Aromatherapy and Skincare Products since 2014. We have a passion for Producing Natural Skincare and Aromatherapy products which aren't only super natural in their origins, but effective in giving you wonderful skin and a rejuvenated mind. Using botanical extracts, we take the natural properties of plants to renew, regenerate and revive and include them in our skincare products to produce highly effective, indulgent skincare products that give visible results to your skin, whilst maintaining our ethics of provenance and naturalness.</p>
+            <React.Fragment>
+                <Helmet>
+                    <title>Naturity Purer Body | Coming Soon</title>
+                </Helmet>
+                <div className="temp-main">
+                    <div className="temp-overlay" ref={element => this.overlay = element}></div>
+                    <div className="temp-left-panel">
+                        <header className="temp-header">
+                            <a href="#" ref={element => this.logo = element}><LogoImage /></a>
+                        </header>
+                        <div className="temp-body">
+                            <h1 ref={element => this.heading = element} className="p temp-body__heading">Coming Soon<span className="fill-green">.</span></h1>
+                            <div className="temp-body__description">
+                            <h2 className="temp-body__subheading">Who are we<span className="fill-green fill-green--question-mark">?</span></h2>
+                            <p>We have been producing Natural Aromatherapy and Skincare Products since 2014. We have a passion for Producing Natural Skincare and Aromatherapy products which aren't only super natural in their origins, but effective in giving you wonderful skin and a rejuvenated mind. Using botanical extracts, we take the natural properties of plants to renew, regenerate and revive and include them in our skincare products to produce highly effective, indulgent skincare products that give visible results to your skin, whilst maintaining our ethics of provenance and naturalness.</p>
 
-                        <h2 className="temp-body__subheading">Get notified<span className="fill-green">.</span></h2>
+                            <h2 className="temp-body__subheading">Get notified<span className="fill-green">.</span></h2>
 
-                        <Form />
+                            <Form />
 
-                        <Social />
-                        
+                            <Social />
+                            
+                            </div>
                         </div>
                     </div>
+                    <div className="temp-right-panel" ref={this.rightPanel}></div>
                 </div>
-                <div className="temp-right-panel" ref={this.rightPanel}></div>
-            </div>
+            </React.Fragment>
         )
     }
 }
