@@ -1,16 +1,19 @@
-import {Switch, Route, Redirect} from "react-router-dom"
+import {BrowserRouter as Router, useHistory, Switch, Route, Redirect} from "react-router-dom"
 import TempLanding from "./pages/TempLanding"
 
 function App() {
+  const history = useHistory();
   return (
     <div className="App">
-      <Switch>
-        <Route exact path="/" render={() => (
-          <Redirect to="/coming-soon"/>
-        )} />
+      <Router history={history}>
+        <Switch>
+          <Route exact path="/" render={() => (
+            <Redirect to="/coming-soon"/>
+          )} />
 
-        <Route path="/coming-soon" component={TempLanding} />
-      </Switch>
+          <Route path="/coming-soon" component={TempLanding} />
+        </Switch> 
+      </Router>
     </div>
   );
 }
